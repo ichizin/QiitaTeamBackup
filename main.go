@@ -72,7 +72,7 @@ func main() {
 		}
 		w := bufio.NewWriter(fw)
 
-		fmt.Fprint(w, OutputValue(result))
+		fmt.Fprint(w, OutputValue(&result))
 		w.Flush()
 		fw.Close()
 	}
@@ -85,7 +85,7 @@ func Exsits(filename string) bool {
 	return err == nil
 }
 
-func OutputValue(result Dataset) string {
+func OutputValue(result *Dataset) string {
 
 	var buffer bytes.Buffer
 
